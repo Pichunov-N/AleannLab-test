@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { JobListCardComponent } from './job-list/job-list-card/job-list-card.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { JobListCardComponent } from './job-list/job-list-card/job-list-card.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

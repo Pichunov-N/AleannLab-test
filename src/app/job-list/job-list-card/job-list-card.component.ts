@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Jobs } from 'src/app/job';
 
 @Component({
   selector: 'app-job-list-card',
   templateUrl: './job-list-card.component.html',
-  styleUrls: ['./job-list-card.component.scss']
+  styleUrls: ['./job-list-card.component.scss'],
 })
 export class JobListCardComponent implements OnInit {
+  @Input() jobs?: Jobs;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
