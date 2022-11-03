@@ -6,7 +6,6 @@
 
 .job-card {
     display: flex;
-    // justify-content: space-between;
     background-color: white;
     min-height: 164px;
     padding: 24px 16px;
@@ -36,6 +35,7 @@
         font-size: 20px;
         line-height: 25px;
         margin-bottom: 8px;
+        width: 600px;
     }
 
     &__subtitle {
@@ -52,6 +52,7 @@
     }
 }
 .card-rate {
+    align-self: center;
     &__star {
 
     }
@@ -80,5 +81,5 @@
 .card-info-wrapper{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    min-width: 936px;
 }
