@@ -7,6 +7,7 @@ import { JobListComponent } from './job-list/job-list.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { JobListCardComponent } from './job-list/job-list-card/job-list-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

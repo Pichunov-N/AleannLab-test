@@ -1,4 +1,5 @@
-<div *ngFor="let item of jobList$ | async">
-  <app-job-list-card [jobs]="item"> </app-job-list-card>
+<div class="container">
+  <div *ngFor="let item of jobList$ | async">
+    <app-job-list-card [jobs]="item"> </app-job-list-card>
+  </div>
 </div>
-<app-job-list-card> </app-job-list-card>
