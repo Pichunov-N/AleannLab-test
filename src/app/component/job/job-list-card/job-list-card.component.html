@@ -1,0 +1,52 @@
+<div *ngIf="jobs" class="job-card">
+  <div class="job-card__photo">
+    <img
+      mat-card-image
+      [src]="jobs.pictures[0]"
+      alt="'{{ jobs.name }}' photo"
+    />
+  </div>
+  <div class="content">
+    <div class="main-content">
+      <div class="card-info-wrapper">
+        <div class="card-info">
+          <a routerLink="details" [queryParams]="{ id: jobs.id }">
+            <h2 class="card-info__title">
+              {{ jobs.title }}
+            </h2>
+          </a>
+          <div class="card-info__subtitle">
+            <p>Department name •&nbsp;</p>
+            <div class="card-info__subtitle-container">
+              <p>
+                {{ jobs.name }}
+              </p>
+              <p>&nbsp;- AKH</p>
+            </div>
+          </div>
+          <div class="card-info__location">
+            <img src="../../../../assets/icons/location.png" alt="" />
+            <p>Vienna, Austria</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="second-content">
+      <div class="card-rate">
+        <img src="./assets/icons/star.svg" class="card-rate__star" />
+        <img src="./assets/icons/star.svg" class="card-rate__star" />
+        <img src="./assets/icons/star.svg" class="card-rate__star" />
+        <img src="./assets/icons/star.svg" class="card-rate__star" />
+        <img src="./assets/icons/star.svg" class="card-rate__star" />
+      </div>
+      <div class="card-end">
+        <button class="card-end__bookmark">
+          <img src="./assets/icons/bookmark.svg" class="bookmark__ico" />
+        </button>
+        <div class="card-end__time">
+          Posted {{ jobs.createdAt | date: "mediumDate" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

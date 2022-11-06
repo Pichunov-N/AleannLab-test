@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="list-wrapper">
+    <div *ngFor="let item of jobList$ | async">
+      <app-job-list-card [jobs]="item"> </app-job-list-card>
+    </div>
+  </div>
+</div>

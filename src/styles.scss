@@ -1,8 +1,31 @@
 @import './styles/variables';
 
+
+
 .container {
-    max-width: 80%;
+    max-width: 1140px;
+    padding: 0 1rem;
     margin: auto;
+
+    @media (max-width: $large) {
+      max-width: 960px;
+      padding: 0 1rem;
+    }
+  
+    @media (max-width: $tablet) {
+      max-width: 720px;
+      padding: 0 1rem;
+    }
+  
+    @media (max-width: $semi-mobile) {
+      max-width: 540px;
+      padding: 0 1rem;
+    }
+  
+    @media (max-width: $mobile) {
+      max-width: 100%;
+      padding: 0 0.5rem;
+    }
 }
 
 * {
@@ -12,7 +35,6 @@
   }
   
   body {
-    // font-family: $roboto-font;
     background-color: #F5F5F5;
   }
   
@@ -53,7 +75,6 @@
   dl,
   dd {
     margin: 0;
-    // font-family: $balsamiq-font;
   }
   
   // *****************************************
@@ -112,7 +133,6 @@
   
   a {
     &:hover {
-    //   color: $main-color;
       transition: 0.3s ease-in-out;
     }
   }

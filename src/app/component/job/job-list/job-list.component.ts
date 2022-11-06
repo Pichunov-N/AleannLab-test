@@ -8,9 +8,10 @@ import { JobService } from '../job.service';
   styleUrls: ['./job-list.component.scss'],
 })
 export class JobListComponent implements OnInit {
-  jobList$ = this.jobService.getJobs().pipe(map((newsList) => newsList));
 
   constructor(private jobService: JobService) {}
+
+  jobList$ = this.jobService.getJobs().pipe(map((newsList) => newsList));
 
   ngOnInit(): void {}
 }

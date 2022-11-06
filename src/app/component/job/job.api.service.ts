@@ -14,4 +14,8 @@ export class JobApiService {
   get<T>( httpParams?: HttpParams): Observable<T> {
     return this.http.get<T>(this.url, { params: httpParams });
   }
+
+  getById<T>( path: string, httpParams?: HttpParams): Observable<T> {
+    return this.http.get<T>(this.url + path,  { params: httpParams });
+  }
 }
