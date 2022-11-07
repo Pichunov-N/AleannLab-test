@@ -1,15 +1,15 @@
-<div *ngIf="jobs" class="container">
+<div *ngIf="jobs" class="container detail-wrapper">
   <div class="main-content">
     <div class="section-header">
       <h2>Job Details</h2>
       <div class="section-header__btns">
         <button>
           <img src="./assets/icons/bookmark.svg" alt="" />
-          <p> Save to my list </p>
+          <p>Save to my list</p>
         </button>
         <button>
           <img src="./assets/icons/share.svg" alt="" />
-          <p> Share </p>
+          <p>Share</p>
         </button>
       </div>
     </div>
@@ -108,6 +108,47 @@
   </div>
 
   <div class="side-content">
-    
+    <div class="side-content__wrapper">
+      <div class="contacts">
+        <div class="contacts__name">
+          <p>Department name.</p>
+          <p>{{ jobs.name }}.</p>
+        </div>
+        <ul class="contacts__list">
+          <li class="contacts__item contacts__item-location">
+            <img src="./assets/icons/location.png" alt="" />
+            <p>
+              {{ jobs.address }}
+            </p>
+          </li>
+          <li class="contacts__item">
+            <p>
+              {{ jobs.phone }}
+            </p>
+          </li>
+          <li class="contacts__item">
+            <p>
+              {{ jobs.email }}
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d1556.5969471004553!2d25.927898053522213!3d48.29483212322206!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x4734089c51b5c475%3A0x9cf1a827b134ad84!2z0LLRg9C70LjRhtGPINCR0L7Qs9C00LDQvdCwINCl0LzQtdC70YzQvdC40YbRjNC60L7Qs9C-LCDQp9C10YDQvdGW0LLRhtGWLCDQp9C10YDQvdGW0LLQtdGG0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA1ODAwMA!3m2!1d48.2957098!2d25.930063!5e0!3m2!1suk!2sua!4v1661345275014!5m2!1suk!2sua"
+          width="400"
+          height="219"
+          style="
+            border: 0;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+          "
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
   </div>
 </div>
