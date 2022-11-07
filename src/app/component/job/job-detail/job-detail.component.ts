@@ -8,11 +8,13 @@ import { Jobs } from '../job';
   styleUrls: ['./job-detail.component.scss']
 })
 export class JobDetailComponent implements OnInit {
-  // @Input() jobs?: Jobs;
+  @Input() jobs?: Jobs;
 
   constructor(private route: ActivatedRoute) { }
 
-  jobDetail?: Jobs;
+  // mapsURL = `https://maps.google.com/maps?q=${this.jobs?.location}%20${this.jobs?.location}&t=&z=20&ie=UTF8&iwloc=&output=embed`;
+
+  // jobDetail?: Jobs;
 
   // setJobDetail() {
   //   this.jobDetail = this.route.snapshot.data['JobDetail$'];

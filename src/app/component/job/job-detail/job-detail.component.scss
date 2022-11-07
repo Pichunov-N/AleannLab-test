@@ -1,0 +1,264 @@
+@import "./../../../../styles/variables.scss";
+
+.detail-wrapper{
+    display: flex;
+}
+
+.main-content {
+    max-width: 724px;
+    color: $main-text-color;
+}
+
+.section-header {
+    border-bottom: 1px $main-text-color solid;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    h2 {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        margin-bottom: 9px;
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+        width: 276px;
+        margin-bottom: 5px;
+
+        button {
+            border: 0px;
+            background-color: inherit;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            color: $main-text-color;
+            padding: 0 8px;
+
+            &:hover {
+                border-radius: 8px;
+                background-color: #2f385017;
+                transition-duration: 0.2s;
+            }
+
+            &:active {
+                background-color: #3a45620e;
+                img {
+                    filter: invert(24%) sepia(48%) saturate(413%) hue-rotate(184deg) brightness(90%) contrast(88%);
+                }
+            }
+
+            img {
+                filter: invert(24%) sepia(31%) saturate(636%) hue-rotate(186deg) brightness(94%) contrast(89%);
+
+                margin-right: 16px;
+            }
+            p {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.apply-btn {
+    text-transform: uppercase;
+    color: $btn-text-color;
+    padding: 18px 30px;
+    background-color: $main-text-color;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    border: 0px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+
+    &:hover {
+        background-color: #3a45628a;
+        transition-duration: 0.2s;
+    }
+    &:active {
+        background-color: #293046;
+    }
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+
+    &__name {
+        max-width: 500px;
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+.salary {
+    &__amount {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    &__details {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: $roboto-font;
+    }
+}
+.created-date {
+    color: $second-text-color;
+    font-family: $roboto-font;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.text {
+    color: $main-text-color;
+    font-family: $roboto-font;
+    margin-bottom: 86px;
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    &__content {
+        margin-bottom: 30px;
+
+        &:nth-child(1) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+}
+.benefites-list {
+    margin-bottom: 30px;
+    list-style: none;
+
+    &__item {
+        position: relative;
+
+        &::before {
+            content: "";
+            height: 9px;
+            width: 9px;
+            background-color: rgba(56, 69, 100, 0.632594);
+            position: absolute;
+            top: 7px;
+            left: -16px;
+        }
+    }
+}
+
+.additional {
+    &__block {
+        margin-bottom: 23px;
+        h4 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            color: $main-text-color;
+            font-family: $roboto-font;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 8px;
+    }
+
+    &__item {
+        padding: 17px 0px;
+        width: 222px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        background-color: $employment-type-color;
+        border: 1px solid;
+        border-radius: 8px;
+        text-align: center;
+
+        border-color: #55699e4d;
+        color: #55699e;
+    }
+    &__item-another {
+        background-color: $benefites-type-color;
+        border-color: #ffcf00;
+        color: #988b49;
+    }
+}
+
+.images-block {
+    display: flex;
+    column-gap: 8px;
+    list-style: none;
+    margin-bottom: 90px;
+
+    &__item {
+        width: 200px;
+        height: 120px;
+
+        &:hover {
+            cursor: pointer;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+    }
+}
+
+.return-btn {
+    padding: 18px 26px 16px;
+    border-radius: 8px;
+    border: 0px;
+    background-color: #c4c2c2a2;
+    display: flex;
+    position: relative;
+    left: -100px;
+
+    &:hover {
+        background-color: #e7e7e77c;
+        transition-duration: 0.2s;
+    }
+    &:active {
+        background-color: #a1a1a1c5;
+        p {
+            color: #6375a7;
+        }
+        img {
+            filter: invert(49%) sepia(10%) saturate(1672%) hue-rotate(187deg) brightness(90%) contrast(87%);
+        }
+    }
+
+    img {
+        width: 10px;
+        height: 18px;
+        margin-right: 20px;
+    }
+
+    p {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: $main-text-color;
+        text-transform: uppercase;
+    }
+}

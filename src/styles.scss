@@ -5,6 +5,7 @@
 .container {
     max-width: 1140px;
     padding: 0 1rem;
+    padding-top: 2rem;
     margin: auto;
 
     @media (max-width: $large) {
