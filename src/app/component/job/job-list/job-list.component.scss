@@ -1,5 +1,11 @@
+@import "./../../../../styles/variables.scss";
+
 .list-wrapper {
     &:last-child {
         margin-bottom: 100px;
+
+        @media (max-width: $less-tablet) {
+            margin-bottom: 10px;
+        }
     }
 }
