@@ -1,22 +1,23 @@
+import { DashboardComponent } from './component/job/dashboard/dashboard.component';
 import { JobService } from './component/job/job.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobListComponent } from './component/job/job-list/job-list.component';
 import { JobDetailComponent } from './component/job/job-detail/job-detail.component';
-import { JobDetailResolver } from './component/job/job-detail.resolver';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   {
-    path: '',
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'list',
     component: JobListComponent,
-    // resolve: {
-    //   employees: JobService
-    // }  
   },
   {
     path: 'details',
     component: JobDetailComponent,
-    // resolve: { JobDetail$: JobDetailResolver },
   },
 ];
 

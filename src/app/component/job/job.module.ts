@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { JobListCardComponent } from './job-list-card/job-list-card.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -12,6 +13,7 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
     JobListComponent,
     JobListCardComponent,
     JobDetailComponent,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
     JobListComponent,
     JobListCardComponent,
     JobDetailComponent,
+    DashboardComponent,
   ]
 })
 export class JobModule { }

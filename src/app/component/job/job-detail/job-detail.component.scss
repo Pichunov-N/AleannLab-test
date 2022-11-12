@@ -2,6 +2,7 @@
 
 .detail-wrapper {
     display: flex;
+    justify-content: center;
 
     @media (max-width: $large) {
         justify-content: space-between;
@@ -224,7 +225,7 @@
         grid-template-columns: 6fr 2fr;
     }
     @media (max-width: $semi-tablet) {
-        grid-template-columns: 6fr 2.1fr;
+        grid-template-columns: 6fr 2.2fr;
     }
     @media (max-width: $exta-variable) {
         grid-template-columns: 6fr 2.4fr;
@@ -662,7 +663,7 @@
         z-index: 10;
     }
 
-        &__item {
+    &__item {
         font-weight: 400;
         font-size: 18px;
         line-height: 24px;
@@ -676,7 +677,7 @@
             font-size: 0.9rem;
         }
     }
-    
+
     &__item-location {
         display: flex;
         img {

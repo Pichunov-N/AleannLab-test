@@ -1,23 +1,35 @@
-import { HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
 import { Jobs } from './job';
-import { JobApiService } from './job.api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobService {
 
-  path: string = '/details';
+  // path: string = 'details'; 
 
-  constructor(private jobApiService: JobApiService) {}
+  constructor(private http: HttpClient) {}
 
-  getJobs(): Observable<Jobs[]> {
-    return this.jobApiService.get();
+  url: string =
+  'https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu';
+
+  getAll(): Observable<Jobs[]> {
+    return this.http.get<Jobs[]>(this.url)
+      
   }
 
-  getJobById(httpParams: HttpParams): Observable<Jobs> {
-    return this.jobApiService.getById<Jobs>(this.path, httpParams);
+  // getJobById(id: number): Observable<Jobs> {
+  //   const url = `${this.path}/${id}`;
+  //   return this.http.get<Jobs>(url).pipe(
+  //     tap(_ => this.log(`fetched hero id=${id}`)),
+  //     catchError(this.handleError<Jobs>(`getHero id=${id}`))
+  //   );
+  // }
+
+  getById(id: Number): Observable<Jobs> {
+    const path = `${this.url}`;
+    return this.http.get<Jobs>(path)
   }
 }

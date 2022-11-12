@@ -10,7 +10,8 @@
     <div class="main-content">
       <div class="card-info-wrapper">
         <div class="card-info">
-          <a routerLink="details" [queryParams]="{ id: jobs.id }">
+          <a routerLink="/details" [queryParams]="{ id: jobs.id }">
+            <!-- /{{jobs.id}} -->
             <h2 class="card-info__title">
               {{ jobs.title }}
             </h2>

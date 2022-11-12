@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
+import { Jobs } from '../job';
 import { JobService } from '../job.service';
 
 @Component({
@@ -11,7 +12,16 @@ export class JobListComponent implements OnInit {
 
   constructor(private jobService: JobService) {}
 
-  jobList$ = this.jobService.getJobs().pipe(map((newsList) => newsList));
+  jobList$ = this.jobService.getAll().pipe(map((newsList) => newsList));
 
-  ngOnInit(): void {}
+  // jobs: Jobs[] = [];
+
+  ngOnInit(): void {
+    // this.getJobList()
+  }
+
+  // getJobList(): void {
+  //   this.jobService.getJobs()
+  //   .subscribe(jobs => this.jobs = jobs);
+  // }
 }

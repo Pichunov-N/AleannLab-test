@@ -7,6 +7,18 @@
 
   @media (max-width: $large) {
     max-width: 960px;
+    padding: 1rem 2rem 0;
+  }
+
+  @media (max-width: $less-large) {
+    padding: 1rem 2rem 0;
+  }
+
+  @media (max-width: $semi-tablet) {
+    padding: 1rem 2rem 0;
+  }
+
+  @media (max-width: $exta-variable) {
     padding: 1rem 1rem 0;
   }
 
