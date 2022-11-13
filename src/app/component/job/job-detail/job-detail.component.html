@@ -1,1 +1,159 @@
-<p>job-detail works!</p>
+<div *ngIf="jobs" class="container detail-wrapper">
+  <div class="main-content">
+    <div class="section-header main-header">
+      <h2>Job Details</h2>
+      <div class="section-header__btns">
+        <button>
+          <img src="./assets/icons/bookmark.svg" alt="" />
+          <p>Save to my list</p>
+        </button>
+        <button>
+          <img src="./assets/icons/share.svg" alt="" />
+          <p>Share</p>
+        </button>
+      </div>
+    </div>
+    <button class="apply-btn upper-btn">apply now</button>
+    <div class="title">
+      <h1 class="title__name">
+        {{ jobs.title }}
+      </h1>
+      <div class="salary">
+        <div class="salary__amount">€&nbsp;{{ jobs.salary | uppercase }}</div>
+        <div class="salary__details">Brutto, per year</div>
+      </div>
+      <div class="created-date">
+        Posted {{ jobs.createdAt | date: "mediumDate" }}
+      </div>
+    </div>
+    <div class="text">
+      <p class="text__content">
+        {{ jobs.description }}
+      </p>
+      <h3 class="text__title">Responsopilities</h3>
+      <p class="text__content">
+        {{ jobs.description | slice: 0:300 }}
+      </p>
+      <p class="text__content">
+        {{ jobs.description | slice: 70:410 }}
+      </p>
+      <p class="text__content">
+        {{ jobs.description | slice: 150:630 }}
+      </p>
+
+      <h3 class="text__title">Compensation & Benefits:</h3>
+      <p>Our physicians enjoy a wide range of benefits, including:</p>
+      <ul class="benefites-list">
+        <li class="benefites-list__item">
+          <p>Very competitive compensation package with bonuses</p>
+        </li>
+        <li class="benefites-list__item">
+          <p>Medical, Dental, and Vision Insurance</p>
+        </li>
+        <li class="benefites-list__item">
+          <p>Occurrence-based Malpractice Coverage</p>
+        </li>
+        <li class="benefites-list__item">
+          <p>
+            Short-term and Long-term Disability Insurance and life insurance
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="btn-wrapper">
+      <button class="apply-btn">apply now</button>
+    </div>
+    <div class="section-header">
+      <h2>Additional info</h2>
+    </div>
+
+    <div class="additional">
+      <div class="additional__block">
+        <h4>Employment type</h4>
+        <ul class="additional__list">
+          <li
+            *ngFor="let item of jobs.employment_type"
+            class="additional__item"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="additional__block">
+        <h4>Benefits</h4>
+        <ul class="additional__list">
+          <li
+            *ngFor="let item of jobs.benefits"
+            class="additional__item additional__item-another"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2>Attached images</h2>
+    </div>
+
+    <div class="images-block">
+      <li class="images-block__item" *ngFor="let item of jobs.pictures">
+        <img src="{{ item }}" alt="photo" />
+      </li>
+    </div>
+
+    <button (click)="goBack()" class="return-btn">
+      <img src="./assets/icons/arrow.svg" alt="" />
+      <p>return to job board</p>
+    </button>
+  </div>
+
+  <div class="side-content">
+    <div class="section-header">
+      <h2>Contacts</h2>
+    </div>
+    <div class="side-content__wrapper">
+      <div class="contacts">
+        <div class="contacts__name">
+          <p>Department name.</p>
+          <p>{{ jobs.name }}.</p>
+        </div>
+        <ul class="contacts__list">
+          <li class="contacts__item contacts__item-location">
+            <img src="./assets/icons/location.png" alt="" />
+            <p>
+              {{ jobs.address }}
+            </p>
+          </li>
+          <li class="contacts__item">
+            <a href="tel: 'jobs.phone'">
+              {{ jobs.phone }}
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a href="mailto: 'jobs.email'">
+              {{ jobs.email }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d1556.5969471004553!2d25.927898053522213!3d48.29483212322206!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x4734089c51b5c475%3A0x9cf1a827b134ad84!2z0LLRg9C70LjRhtGPINCR0L7Qs9C00LDQvdCwINCl0LzQtdC70YzQvdC40YbRjNC60L7Qs9C-LCDQp9C10YDQvdGW0LLRhtGWLCDQp9C10YDQvdGW0LLQtdGG0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA1ODAwMA!3m2!1d48.2957098!2d25.930063!5e0!3m2!1suk!2sua!4v1661345275014!5m2!1suk!2sua"
+          height="219"
+          style="
+            border: 0;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            width: 100%;
+          "
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
