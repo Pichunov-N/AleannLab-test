@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Jobs } from '../job';
 
 @Component({
@@ -9,7 +10,13 @@ import { Jobs } from '../job';
 export class JobListCardComponent implements OnInit {
   @Input() jobs?: Jobs;
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
+
+  goToProductDetails(id: string) {
+    this.router.navigate(['/details', id]);
+  }
 
   ngOnInit(): void {}
 }

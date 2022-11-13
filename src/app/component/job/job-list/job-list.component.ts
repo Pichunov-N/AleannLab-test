@@ -14,14 +14,5 @@ export class JobListComponent implements OnInit {
 
   jobList$ = this.jobService.getAll().pipe(map((newsList) => newsList));
 
-  // jobs: Jobs[] = [];
-
-  ngOnInit(): void {
-    // this.getJobList()
-  }
-
-  // getJobList(): void {
-  //   this.jobService.getJobs()
-  //   .subscribe(jobs => this.jobs = jobs);
-  // }
+  ngOnInit(): void {}
 }
