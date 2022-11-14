@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Jobs } from '../job';
 import { Location } from '@angular/common';
-import { JobService } from '../job.service';
+import { HttpClient } from '@angular/common/http';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-job-detail',
@@ -10,22 +10,35 @@ import { JobService } from '../job.service';
   styleUrls: ['./job-detail.component.scss'],
 })
 export class JobDetailComponent implements OnInit {
-  jobs: Jobs | undefined;
+  page: boolean = false;
+  jobs: any;
+  id: number | undefined;
+  job: any;
+  benefits: any = [];
+  private subscription: Subscription;
 
-  constructor(
-    private route: ActivatedRoute,
-    private location: Location,
-    private jobService: JobService,
-  ) {}
-
-  ngOnInit(): void {
-    this.getJob();
+  constructor(private httpClient: HttpClient, private activateRoute: ActivatedRoute, private location: Location){
+    this.jobs = [];
+    this.subscription = activateRoute.params.subscribe(params=>this.id=params['id']);
   }
 
-  getJob(): void {
-    // const id = String(this.route.snapshot.paramMap.get('id'));
-    this.jobService.getById()
-      .subscribe(jobs => this.jobs = jobs);
+  ngOnInit(): void {
+    if(this.id === undefined) {return}
+    this.getWorkersList();
+  }
+
+  getWorkersList(){
+    const job_info =  this.httpClient.get('https://api.json-generator.com/templates/ZM1r0eic3XEy/data?access_token=wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu').subscribe((result:any)=>
+    {
+      this.jobs = result;
+    if(this.id !== undefined){
+      this.job = JSON.parse(JSON.stringify(this.jobs[this.id]));
+      this.benefits.push(this.job.description.split('Responsopilities')[1].split('Compensation & Benefits:')[1].split('.'));
+      this.benefits[0].pop();
+      this.benefits = Array.from(this.benefits[0]);
+      this.page = true;
+    }
+    });
   }
 
   goBack(): void {

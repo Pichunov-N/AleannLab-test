@@ -1,4 +1,4 @@
-<div *ngIf="jobs" class="container detail-wrapper">
+<div *ngIf="page" class="container detail-wrapper">
   <div class="main-content">
     <div class="section-header main-header">
       <h2>Job Details</h2>
@@ -16,29 +16,29 @@
     <button class="apply-btn upper-btn">apply now</button>
     <div class="title">
       <h1 class="title__name">
-        {{ jobs.title }}
+        {{ job.title }}
       </h1>
       <div class="salary">
-        <div class="salary__amount">€&nbsp;{{ jobs.salary | uppercase }}</div>
+        <div class="salary__amount">€&nbsp;{{ job.salary | uppercase }}</div>
         <div class="salary__details">Brutto, per year</div>
       </div>
       <div class="created-date">
-        Posted {{ jobs.createdAt | date: "mediumDate" }}
+        Posted {{ job.createdAt | date: "mediumDate" }}
       </div>
     </div>
     <div class="text">
       <p class="text__content">
-        {{ jobs.description }}
+        {{ job.description }}
       </p>
       <h3 class="text__title">Responsopilities</h3>
       <p class="text__content">
-        {{ jobs.description | slice: 0:300 }}
+        {{ job.description | slice: 0:300 }}
       </p>
       <p class="text__content">
-        {{ jobs.description | slice: 70:410 }}
+        {{ job.description | slice: 70:410 }}
       </p>
       <p class="text__content">
-        {{ jobs.description | slice: 150:630 }}
+        {{ job.description | slice: 150:630 }}
       </p>
 
       <h3 class="text__title">Compensation & Benefits:</h3>
@@ -72,7 +72,7 @@
         <h4>Employment type</h4>
         <ul class="additional__list">
           <li
-            *ngFor="let item of jobs.employment_type"
+            *ngFor="let item of job.employment_type"
             class="additional__item"
           >
             {{ item }}
@@ -84,7 +84,7 @@
         <h4>Benefits</h4>
         <ul class="additional__list">
           <li
-            *ngFor="let item of jobs.benefits"
+            *ngFor="let item of job.benefits"
             class="additional__item additional__item-another"
           >
             {{ item }}
@@ -98,7 +98,7 @@
     </div>
 
     <div class="images-block">
-      <li class="images-block__item" *ngFor="let item of jobs.pictures">
+      <li class="images-block__item" *ngFor="let item of job.pictures">
         <img src="{{ item }}" alt="photo" />
       </li>
     </div>
@@ -117,23 +117,23 @@
       <div class="contacts">
         <div class="contacts__name">
           <p>Department name.</p>
-          <p>{{ jobs.name }}.</p>
+          <p>{{ job.name }}.</p>
         </div>
         <ul class="contacts__list">
           <li class="contacts__item contacts__item-location">
             <img src="./assets/icons/location.png" alt="" />
             <p>
-              {{ jobs.address }}
+              {{ job.address }}
             </p>
           </li>
           <li class="contacts__item">
             <a href="tel: 'jobs.phone'">
-              {{ jobs.phone }}
+              {{ job.phone }}
             </a>
           </li>
           <li class="contacts__item">
             <a href="mailto: 'jobs.email'">
-              {{ jobs.email }}
+              {{ job.email }}
             </a>
           </li>
         </ul>
