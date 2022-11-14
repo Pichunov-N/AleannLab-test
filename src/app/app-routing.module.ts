@@ -1,5 +1,4 @@
 import { DashboardComponent } from './component/job/dashboard/dashboard.component';
-import { JobService } from './component/job/job.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobListComponent } from './component/job/job-list/job-list.component';
@@ -16,7 +15,7 @@ const routes: Routes = [
     component: JobListComponent,
   },
   {
-    path: 'details',
+    path: 'list/details/:id',
     component: JobDetailComponent,
   },
 ];
